@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Realtor Chelsea | Luxury Real Estate in Nairobi</title>
+
+  <meta name="description" content="Realtor Chelsea helps you find beautiful homes and valuable real estate investments in Nairobi, Kenya. Buy, sell, rent and invest with confidence.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f8f5ef;
+      color: #17243a;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      background: #101d35;
+      color: white;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .brand {
+      font-size: 25px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .brand span {
+      color: #d4b56a;
+    }
+
+    .company {
+      font-size: 12px;
+      color: #ddd;
+      margin-top: 2px;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #d4b56a;
+    }
+
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      padding: 80px 7%;
+      background:
+        linear-gradient(rgba(16,29,53,0.72), rgba(16,29,53,0.72)),
+        url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 750px;
+    }
+
+    .eyebrow {
+      color: #d4b56a;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 13px;
+      font-weight: bold;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(48px, 8vw, 86px);
+      line-height: 1;
+      margin-bottom: 25px;
+    }
+
+    h1 span {
+      color: #d4b56a;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 620px;
+      color: #f2f2f2;
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 25px;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn-gold {
+      background: #d4b56a;
+      color: #101d35;
+    }
+
+    .btn-gold:hover {
+      background: #ead18d;
+    }
+
+    .btn-outline {
+      border: 1px solid white;
+      color: white;
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: #101d35;
+    }
+
+    section {
+      padding: 80px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #666;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .about {
+      background: white;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .about-text h2 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      margin-bottom: 18px;
+      color: #555;
+    }
+
+    .about-card {
+      background: #101d35;
+      color: white;
+      padding: 45px;
+      border-radius: 8px;
+    }
+
+    .about-card h3 {
+      color: #d4b56a;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .about-card p {
+      color: #eee;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .service {
+      background: white;
+      padding: 30px 25px;
+      border-radius: 7px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+
+    .service-icon {
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+
+    .service h3 {
+      margin-bottom: 10px;
+    }
+
+    .service p {
+      color: #666;
+      font-size: 14px;
+    }
+
+    .areas {
+      background: #101d35;
+      color: white;
+      text-align: center;
+    }
+
+    .areas h2 {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .areas > p {
+      color: #ddd;
+      max-width: 650px;
+      margin: 0 auto 35px;
+    }
+
+    .area-list {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .area {
+      border: 1px solid #d4b56a;
+      padding: 10px 18px;
+      border-radius: 30px;
+      color: #f5d889;
+    }
+
+    .cta {
+      background: #d4b56a;
+      text-align: center;
+      color: #101d35;
+    }
+
+    .cta h2 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      max-width: 650px;
+      margin: 0 auto 30px;
+    }
+
+    .cta .btn {
+      background: #101d35;
+      color: white;
+    }
+
+    footer {
+      background: #0b1527;
+      color: white;
+      padding: 45px 7%;
+      text-align: center;
+    }
+
+    footer h3 {
+      font-size: 25px;
+      margin-bottom: 5px;
+    }
+
+    footer h3 span {
+      color: #d4b56a;
+    }
+
+    footer p {
+      color: #bbb;
+      margin: 7px 0;
+    }
+
+    .socials {
+      margin-top: 18px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .socials a {
+      color: #d4b56a;
+    }
+
+    .copyright {
+      margin-top: 25px;
+      font-size: 12px;
+      color: #888;
+    }
+
+    @media (max-width: 850px) {
+
+      header {
+        padding: 16px 5%;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .hero {
+        padding: 70px 6%;
+        min-height: 80vh;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      section {
+        padding: 65px 6%;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .section-title h2,
+      .about-text h2,
+      .areas h2,
+      .cta h2 {
+        font-size: 32px;
+      }
+    }
+
+    @media (max-width: 520px) {
+
+      .brand {
+        font-size: 21px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 52px;
+      }
+
+      .buttons {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div>
+      <div class="brand">Realtor <span>Chelsea</span></div>
+      <div class="company">Thamani Estates</div>
+    </div>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#areas">Areas</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        Nairobi Real Estate
+      </div>
+
+      <h1>
+        Find a Home<br>
+        <span>Worth Living In.</span>
+      </h1>
+
+      <p>
+        I'm Chelsea, a real estate sales consultant helping you
+        discover beautiful homes and valuable property investments
+        across Nairobi.
+      </p>
+
+      <div class="buttons">
+
+        <a class="btn btn-gold"
+           href="https://wa.me/254795792772">
+          WhatsApp Me
+        </a>
+
+        <a class="btn btn-outline"
+           href="#services">
+          Explore Services
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="about" class="about">
+
+    <div class="about-grid">
+
+      <div class="about-text">
+
+        <h2>Hi, I'm Chelsea.</h2>
+
+        <p>
+          I'm a Nairobi-based real estate sales consultant
+          passionate about helping people make confident property
+          decisions.
+        </p>
+
+        <p>
+          Whether you're looking for your next home, selling a
+          property or exploring real estate as an investment,
+          I'll help you navigate the process from enquiry to
+          viewing and beyond.
+        </p>
+
+        <p>
+          My focus is on making the property journey simple,
+          transparent and personal.
+        </p>
+
+      </div>
+
+      <div class="about-card">
+
+        <h3>Real Estate With A Personal Touch.</h3>
+
+        <p>
+          From your first enquiry to finding the right property,
+          my goal is to understand what you're looking for and
+          connect you with opportunities that make sense for you.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="services">
+
+    <div class="section-title">
+
+      <h2>How I Can Help</h2>
+
+      <p>
+        Professional real estate assistance for buyers,
+        sellers, renters and investors.
+      </p>
+
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service">
+        <div class="service-icon">🏡</div>
+        <h3>Buy</h3>
+        <p>
+          Find apartments, villas and homes that match
+          your lifestyle and budget.
+        </p>
+      </div>
+
+      <div class="service">
+        <div class="service-icon">💼</div>
+        <h3>Invest</h3>
+        <p>
+          Explore property opportunities in some of
+          Nairobi's sought-after locations.
+        </p>
+      </div>
+
+      <div class="service">
+        <div class="service-icon">🔑</div>
+        <h3>Rent</h3>
+        <p>
+          Get assistance finding a property that suits
+          your needs and preferences.
+        </p>
+      </div>
+
+      <div class="service">
+        <div class="service-icon">🏢</div>
+        <h3>Sell</h3>
+        <p>
+          Connect your property with potential buyers
+          through a professional marketing approach.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="areas" class="areas">
+
+    <h2>Areas I Cover</h2>
+
+    <p>
+      I specialise in apartments, homes and investment
+      properties across some of Nairobi's prime neighbourhoods.
+    </p>
+
+    <div class="area-list">
+
+      <div class="area">Westlands</div>
+      <div class="area">Kilimani</div>
+      <div class="area">Kileleshwa</div>
+      <div class="area">Lavington</div>
+      <div class="area">Riverside</div>
+      <div class="area">Nairobi</div>
+
+    </div>
+
+  </section>
+
+  <section id="contact" class="cta">
+
+    <h2>Looking For Property?</h2>
+
+    <p>
+      Tell me what you're looking for and let's start
+      your property journey.
+    </p>
+
+    <a class="btn"
+       href="https://wa.me/254795792772">
+      Chat With Chelsea on WhatsApp
+    </a>
+
+  </section>
+
+  <footer>
+
+    <h3>Realtor <span>Chelsea</span></h3>
+
+    <p>Thamani Estates</p>
+
+    <p>Nairobi, Kenya</p>
+
+    <div class="socials">
+
+      <a href="https://www.instagram.com/_realtorchelsea_/">
+        Instagram
+      </a>
+
+      <a href="https://www.tiktok.com/">
+        TikTok
+      </a>
+
+      <a href="https://www.linkedin.com/">
+        LinkedIn
+      </a>
+
+    </div>
+
+    <div class="copyright">
+      © 2026 Realtor Chelsea. All rights reserved.
+    </div>
+
+  </footer>
+
+</body>
+</html>
